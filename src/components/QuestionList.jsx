@@ -7,18 +7,30 @@ const QuestionList = ({
   setScore,
   score
 }) => {
-  const round = questions.sort(() => Math.random() - 0.5).slice(0, 10);
+  const [round, setRound] = useState(questions.sort(() => Math.random() - 0.5).slice(0, 10));
   const [currentQ, setCurrentQ] = useState(round[0]);
   const [count, setCount] = useState(0);
+  const [roundOver, setRoundOver] = useState(false);
 
   const nextQ = () => {
-    console.log("clicked");
     setCount(count + 1);
     setCurrentQ(round[count + 1]);
+    if (count === 9) {
+      setRoundOver(true);
+    }
   };
+
+  const newRound = () => {
+    setRound(questions.sort(() => Math.random() - 0.5).slice(0, 10));
+    setCurrentQ(round[0]);
+    setCount(0);
+    setRoundOver(false);
+    setScore(0)
+  }
 
   return (
     <div>
+      {!roundOver && (
       <div>
         <QuestionItem
           setScore={setScore}
@@ -26,11 +38,17 @@ const QuestionList = ({
           questionItem={currentQ}
           index={count}
           key={count}
+          nextQ={nextQ}
         />
       </div>
+      )}
+      {roundOver && (
         <div>
-          <button onClick={nextQ}>Next question please!</button>
+          <h2>Looks like this round is over!</h2>
+          <h3>You finished with a final score of {score} points</h3>
+          <button onClick={newRound}>Start a new round?</button>
         </div>
+      )}
     </div>
   );
 }

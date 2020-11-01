@@ -4,12 +4,14 @@ const AnswerItem = ({
   text,
   correct,
   setScore,
-  score
+  score,
+  nextQ
  }) => {
   const isCorrect = () => {
     if (text === correct) {
       setScore(score + 1)
     }
+    nextQ();
   }
 
   return (

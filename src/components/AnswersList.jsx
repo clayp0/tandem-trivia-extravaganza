@@ -5,7 +5,8 @@ const AnswersList = ({
   incorrect,
   correct,
   setScore,
-  score
+  score,
+  nextQ
 }) => {
   const allAnswers = incorrect.concat(correct);
   return (
@@ -18,6 +19,7 @@ const AnswersList = ({
         index={index}
         setScore={setScore}
         score={score}
+        nextQ={nextQ}
         />
       ))}
     </div>

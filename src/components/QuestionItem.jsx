@@ -5,7 +5,8 @@ const Question = ({
   questionItem,
   index,
   setScore,
-  score
+  score,
+  nextQ
 }) => {
   const {
     question,
@@ -20,6 +21,7 @@ const Question = ({
           score={score}
           incorrect={incorrect}
           correct={correct}
+          nextQ={nextQ}
         />
     </div>
   );
