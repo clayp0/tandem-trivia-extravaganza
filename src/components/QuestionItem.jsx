@@ -1,5 +1,6 @@
 import React from 'react';
 import AnswersList from './AnswersList.jsx'
+import Timer from './Timer.jsx'
 
 const Question = ({
   questionItem,
@@ -23,6 +24,13 @@ const Question = ({
           correct={correct}
           nextQ={nextQ}
         />
+      <div>
+          <Timer
+            nextQ={nextQ}
+            // seconds={seconds}
+            // setSeconds={setSeconds}
+          />
+        </div>
     </div>
   );
 };

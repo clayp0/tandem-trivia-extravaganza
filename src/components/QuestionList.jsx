@@ -1,6 +1,7 @@
 import React from 'react';
-import QuestionItem from './QuestionItem.jsx';
 import { useState } from 'react';
+import QuestionItem from './QuestionItem.jsx';
+import Timer from './Timer.jsx';
 
 const QuestionList = ({
   questions,
