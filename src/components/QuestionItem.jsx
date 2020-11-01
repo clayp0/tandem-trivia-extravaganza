@@ -27,6 +27,7 @@ const Question = ({
       <div>
           <Timer
             nextQ={nextQ}
+            correct={correct}
           />
         </div>
     </div>

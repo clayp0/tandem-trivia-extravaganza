@@ -16,6 +16,7 @@ const AnswersList = ({
   return (
     <div>
       {allAnswers.map((answer, index) => (
+        <div key={index}>
         <AnswerItem
         text={answer}
         correct={correct}
@@ -27,17 +28,18 @@ const AnswersList = ({
         showCorrect={showCorrect}
         setShowIncorrect={setShowIncorrect}
         showIncorrect={showIncorrect}
-        />
+        /><br />
+        </div>
       ))}
       {showCorrect && (
         <div>
-          Well, would ya look at that! You got it right!<br />
+          <h3>Well, would ya look at that! You got it right!</h3><br />
           <button onClick={nextQ}>Sweet, next question!</button>
         </div>
       )}
       {showIncorrect && (
         <div>
-          Shoot! The correct answer was {correct}<br />
+          <h3>Shoot! The correct answer was {correct}</h3><br/>
           <button onClick={nextQ}>Okay, let's go again!</button>
         </div>
       )}
