@@ -27,8 +27,6 @@ const Question = ({
       <div>
           <Timer
             nextQ={nextQ}
-            // seconds={seconds}
-            // setSeconds={setSeconds}
           />
         </div>
     </div>

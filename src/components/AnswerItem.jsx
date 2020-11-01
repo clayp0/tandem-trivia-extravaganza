@@ -1,23 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const AnswerItem = ({
   text,
   correct,
   setScore,
   score,
-  nextQ
+  setShowCorrect,
+  setShowIncorrect
  }) => {
+
   const isCorrect = () => {
     if (text === correct) {
       setScore(score + 1)
+      setShowCorrect(true);
+    } else {
+      setShowIncorrect(true);
     }
-    nextQ();
   }
 
   return (
-    <div>
+      <div>
       <button onClick={isCorrect}>{text}</button>
     </div>
+
   );
 }
 
