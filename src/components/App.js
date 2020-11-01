@@ -8,7 +8,6 @@ const App = () => {
   return (
     <div>
       <h1>BEHOLD! QUESTIONS!</h1>
-      <button onClick={e => console.log('questions', parsed)}>dummmmmmy</button>
       <QuestionList
       questions={questions}
       />
