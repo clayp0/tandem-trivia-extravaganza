@@ -6,7 +6,9 @@ const AnswerItem = ({
   setScore,
   score,
   setShowCorrect,
-  setShowIncorrect
+  showCorrect,
+  setShowIncorrect,
+  showIncorrect, 
  }) => {
 
   const isCorrect = () => {
@@ -18,11 +20,14 @@ const AnswerItem = ({
     }
   }
 
-  return (
-      <div>
-      <button onClick={isCorrect}>{text}</button>
-    </div>
+const showAnswer = showCorrect || showIncorrect
 
+  return (
+    <div>
+      {!showAnswer &&
+        <button onClick={isCorrect}>{text}</button>
+      }
+    </div>
   );
 }
 

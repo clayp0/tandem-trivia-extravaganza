@@ -24,7 +24,9 @@ const AnswersList = ({
         score={score}
         nextQ={nextQ}
         setShowCorrect={setShowCorrect}
+        showCorrect={showCorrect}
         setShowIncorrect={setShowIncorrect}
+        showIncorrect={showIncorrect}
         />
       ))}
       {showCorrect && (
