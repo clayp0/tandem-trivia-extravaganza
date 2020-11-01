@@ -7,24 +7,24 @@ const QuestionList = ({ questions }) => {
   const [currentQ, setCurrentQ] = useState(round[0]);
   const [count, setCount] = useState(0);
 
-  // function nextQ() {
-  //   console.log("clicked");
-  //   setCount(count + 1);
-  //   setCurrentQ(round[count]);
-  // };
+  const nextQ = () => {
+    console.log("clicked");
+    setCount(count + 1);
+    setCurrentQ(round[count + 1]);
+  };
 
   return (
     <div>
       <div>
-  <h1>hello</h1>
-    {round.map((questionObj, index) => (
-      <Question
-        questionItem={questionObj}
-        key={index}
-        index={index}
-      />
-    ))}
+        <Question
+          questionItem={currentQ}
+          index={count}
+          key={count}
+        />
       </div>
+        <div>
+          <button onClick={nextQ}>Next question please!</button>
+        </div>
     </div>
   );
 }
