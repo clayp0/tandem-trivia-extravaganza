@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState } from 'react';
-import Question from './QuestionItem.jsx';
 import QuestionList from './QuestionList.jsx'
 const questions = require('../assets/Apprentice_TandemFor400_Data.json')
 
@@ -10,7 +9,7 @@ const App = () => {
   const [start, setStart] = useState(false);
   return (
     <div>
-      <h1>BEHOLD! QUESTIONS!</h1>
+      <h1>Let's Play Some Trivia!</h1>
       {!start && (
         <div>
           <h2>Would you care to start a round?</h2>
