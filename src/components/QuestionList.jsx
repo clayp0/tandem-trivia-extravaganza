@@ -3,9 +3,7 @@ import Question from './QuestionItem.jsx';
 import { useState } from 'react';
 
 const QuestionList = ({ questions }) => {
-  const round = questions.sort(() => Math.random() - 0.5).slice(0, 10);
-  const [currentQ, setCurrentQ] = useState(round[0]);
-  const [count, setCount] = useState(0);
+  // const round = questions.sort(() => Math.random() - 0.5).slice(0, 10);
 
   // function nextQ() {
   //   console.log("clicked");
@@ -16,13 +14,14 @@ const QuestionList = ({ questions }) => {
   return (
     <div>
       <div>
-        {round.map((question, index) => (
-          <Question
-            questionItem={question}
-            index={index}
-            key={index}
-          />
-        ))}
+  <h1>hello</h1>
+    {questions.map((questionObj, index) => (
+      <Question
+        questionItem={questionObj}
+        key={index}
+        index={index}
+      />
+    ))}
       </div>
     </div>
   );
