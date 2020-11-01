@@ -18,7 +18,7 @@ const App = () => {
       )}
       {start && (
         <div>
-          <h2>You currently have {score} points</h2>
+          <h2>You currently have {score} point(s)</h2>
           <QuestionList
             questions={questions}
             setScore={setScore}

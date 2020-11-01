@@ -2,30 +2,34 @@ import React, { useState, useEffect } from 'react';
 
 const Timer = ({
   nextQ,
-  correct
+  correct,
+  setShowIncorrect,
+  showCorrect,
+  showIncorrect
 }) => {
   const [seconds, setSeconds] = useState(60);
-  const [timeUp, setTimeUp] = useState(false);
+  const [timeUp, setTimeUp] = useState(true);
 
   useEffect(() => {
     if (seconds > 0) {
       setTimeout(() => setSeconds(seconds - 1), 1000);
     } else {
-      setTimeUp(true)
+      setTimeUp(false);
+      setShowIncorrect(true);
     }
   }, [seconds]);
+  const showTimer = !timeUp || showCorrect || showIncorrect
 
   return (
     <div>
       {
-        !timeUp &&
+         !showTimer &&
         <p>You have {seconds} seconds left to answer this question.</p>
       }
       {
-        timeUp &&
+        !timeUp &&
         <div>
-          <h2>Rats! Out of time! <br /> The correct answer was {correct} </h2><br />
-          <button onClick={nextQ}>I'll get 'em next time</button>
+          <h2>Rats! Out of time!</h2><br />
         </div>
       }
     </div>

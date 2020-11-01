@@ -6,11 +6,13 @@ const AnswersList = ({
   correct,
   setScore,
   score,
-  nextQ
+  nextQ,
+  setShowCorrect,
+  setShowIncorrect,
+  showCorrect,
+  showIncorrect
 }) => {
   const allAnswers = incorrect.concat(correct);
-  const [showCorrect, setShowCorrect ] = useState(false);
-  const [ showIncorrect, setShowIncorrect ] = useState(false);
 
   
   return (
