@@ -1,7 +1,12 @@
 import React from 'react';
-import Answers from './Answers.jsx'
+import AnswersList from './AnswersList.jsx'
 
-const Question = ({ questionItem, index }) => {
+const Question = ({
+  questionItem,
+  index,
+  setScore,
+  score
+}) => {
   const {
     question,
     incorrect,
@@ -10,7 +15,9 @@ const Question = ({ questionItem, index }) => {
   return (
     <div>
   <h2>{index + 1}. {question}</h2>
-        <Answers
+        <AnswersList
+          setScore={setScore}
+          score={score}
           incorrect={incorrect}
           correct={correct}
         />

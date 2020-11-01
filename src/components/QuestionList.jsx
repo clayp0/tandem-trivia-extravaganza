@@ -1,8 +1,12 @@
 import React from 'react';
-import Question from './QuestionItem.jsx';
+import QuestionItem from './QuestionItem.jsx';
 import { useState } from 'react';
 
-const QuestionList = ({ questions }) => {
+const QuestionList = ({
+  questions,
+  setScore,
+  score
+}) => {
   const round = questions.sort(() => Math.random() - 0.5).slice(0, 10);
   const [currentQ, setCurrentQ] = useState(round[0]);
   const [count, setCount] = useState(0);
@@ -16,7 +20,9 @@ const QuestionList = ({ questions }) => {
   return (
     <div>
       <div>
-        <Question
+        <QuestionItem
+          setScore={setScore}
+          score={score}
           questionItem={currentQ}
           index={count}
           key={count}
